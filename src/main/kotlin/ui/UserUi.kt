@@ -27,6 +27,7 @@ class UserUi(private val userUseCase: UserUseCase) {
             email = email,
             password = password, )
         val user = userUseCase.authorize(authorizeRequest)
+        userAuthorizer = user
         println(UserResponseToString(user))
     }
 
