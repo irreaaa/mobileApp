@@ -12,13 +12,13 @@ class UserUi(private val userUseCase: UserUseCase) {
     var userAuthorizer: UserResponse? = null
 
     fun authorize() {
-        println("Enter your email: ")
+        println("Введите почту: ")
         val email = readlnOrNull()
         checkNotNull(email) {
             "Имеил не должен отсутствовать."
         }
 
-        println("Enter your password")
+        println("Введите пароль: ")
         val password = readlnOrNull()
         checkNotNull(password) {
             "Пароль не должен отсутствовать."
@@ -32,17 +32,17 @@ class UserUi(private val userUseCase: UserUseCase) {
     }
 
     fun registration() {
-        println("Enter your first name: ")
+        println("Введите имя: ")
         val firstName = readlnOrNull()
         checkNotNull(firstName) {
-            "Name не должен отсутствовать."
+            "Имя не должен отсутствовать."
         }
-        println("Enter your email: ")
+        println("Введите почту: ")
         val email = readlnOrNull()
         checkNotNull(email) {
             "Имеил не должен отсутствовать."
         }
-        println("Enter your password")
+        println("Введите пароль")
         val password = readlnOrNull()
         checkNotNull(password) {
             "Пароль не должен отсутствовать."
@@ -61,7 +61,7 @@ class UserUi(private val userUseCase: UserUseCase) {
         checkNotNull(userAuthorizer){
             "Вы не авторизованы"
         }
-        println("Enter your password")
+        println("Введите новый пароль")
         val password = readlnOrNull()
         checkNotNull(password) {
             "Пароль не должен быть пустым "
@@ -83,33 +83,26 @@ class UserUi(private val userUseCase: UserUseCase) {
         var phone: String? = null
         var address: String? = null
 
-            println("Enter your email")
+            println("Введите имеил")
             val email = readlnOrNull()
             checkNotNull(email) {
                 "Email не должен быть пустым "
             }
 
-            println("Enter your first name")
+            println("Введите имя")
             val firstName = readlnOrNull()
             checkNotNull(firstName) {
-                "First name не должен быть пустым "
+                "Имя не должен быть пустым "
             }
 
-
-        if (userAuthorizer!!.lastName != null) {
-            println("Enter your last name")
+            println("Введите фамилию: ")
             lastName = readlnOrNull()
-        }
 
-        if (userAuthorizer!!.phone != null) {
-            println("Enter your phone")
+            println("Введите телефон: ")
             phone = readlnOrNull()
-        }
 
-        if (userAuthorizer!!.address != null) {
-            println("Enter your address")
+            println("Введите адрес")
             address = readlnOrNull()
-        }
 
         val changeProfileRequest = ChangeProfileRequest(
             userId = userAuthorizer!!.userId,
@@ -140,7 +133,7 @@ class UserUi(private val userUseCase: UserUseCase) {
             printOutput.appendLine()
         }
         if (!userResponse.address.isNullOrBlank()){
-            printOutput.append("Ващ адрес: ${userResponse.address}")
+            printOutput.append("Ваш адрес: ${userResponse.address}")
             printOutput.appendLine()
         }
         return printOutput.toString()

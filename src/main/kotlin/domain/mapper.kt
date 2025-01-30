@@ -1,6 +1,8 @@
 package org.example.domain
 
+import org.example.data.model.ShoesDTO
 import org.example.data.model.UserDTO
+import org.example.domain.response.ShoesResponse
 import org.example.domain.response.UserResponse
 
 fun UserDtoTOUserResponse(userDTO: UserDTO) = UserResponse(
@@ -11,3 +13,14 @@ fun UserDtoTOUserResponse(userDTO: UserDTO) = UserResponse(
     userId = userDTO.userId,
     address = userDTO.address,
 )
+
+fun ShoesDtoToShoewResponse(shoesDTO: ShoesDTO) = ShoesResponse(
+    shoesName = shoesDTO.shoesName,
+    shoesDescription = shoesDTO.shoesDescription,
+    shoesUrl = shoesDTO.shoesUrl,
+    category = shoesDTO.category,
+)
+
+fun ShoesResponse(shoesName: String, shoesDescription: String, shoesUrl: String, category: String) {
+
+}
