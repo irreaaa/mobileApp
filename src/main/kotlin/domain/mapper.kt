@@ -15,12 +15,9 @@ fun UserDtoTOUserResponse(userDTO: UserDTO) = UserResponse(
 )
 
 fun ShoesDtoToShoewResponse(shoesDTO: ShoesDTO) = ShoesResponse(
+    shoesId = shoesDTO.shoesId,
     shoesName = shoesDTO.shoesName,
     shoesDescription = shoesDTO.shoesDescription,
     shoesUrl = shoesDTO.shoesUrl,
     category = shoesDTO.category,
 )
-
-fun ShoesResponse(shoesName: String, shoesDescription: String, shoesUrl: String, category: String) {
-
-}
