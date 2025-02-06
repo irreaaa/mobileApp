@@ -29,4 +29,5 @@ fun main() {
     shoesUI.getAllFilterShoes()
     shoesUI.removeShoesById()
     shoesUI.getAllFilterShoes()
+
 }
