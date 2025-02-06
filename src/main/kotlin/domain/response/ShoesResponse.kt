@@ -7,3 +7,9 @@ data class ShoesResponse (
     var shoesUrl: String,
     var category: String,
 )
+
+{
+    override fun toString(): String {
+        return "$shoesName\n$shoesDescription"
+    }
+}

@@ -1,8 +1,8 @@
 package org.example.ui
 
-import jdk.incubator.vector.VectorOperators.Conversion
 import org.example.domain.Request.AddShoesRequest
 import org.example.domain.Request.GetAllFilterShoesRequest
+import org.example.domain.Request.GetShoesByIdRequest
 import org.example.domain.Request.UpdateShoesRequest
 import org.example.domain.ShoesUseCase
 import org.example.domain.response.ShoesResponse
@@ -63,6 +63,18 @@ class ShoesUi(private val shoesUseCase: ShoesUseCase) {
         println("Найденная обувь по ващему запросу:")
         printShoesList(shoesList)
     }
+
+//    fun getShoesById() {
+//        println("Введите айди обуви, которую хотите найти: ")
+//        val shoesId = readlnOrNull()?.toInt()
+//            ?: throw IllegalArgumentException("Такого id не существует")
+//        val getShoesByIdRequest = GetShoesByIdRequest(
+//            shoesId = shoesId
+//        )
+//        val shoesById = shoesUseCase.getShoesById(getShoesByIdRequest)
+//        println("Найденная обувь по ващему запросу:")
+//        printShoesList(shoesById)
+//    }
 
     fun updateShoes() {
         println("Введите айди обуви, которую вы хотте обновить")

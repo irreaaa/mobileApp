@@ -15,6 +15,16 @@ fun UserDtoTOUserResponse(userDTO: UserDTO, shoesList: List<ShoesDTO> = emptyLis
     favouriteList = shoesList.map(::ShoesDtoToShoesResponse)
 )
 
+fun shoesDtoToUserResponse(shoesDTO: ShoesDTO): ShoesResponse{
+    return ShoesResponse(
+        shoesId = shoesDTO.shoesId,
+        shoesName = shoesDTO.shoesName,
+        shoesDescription = shoesDTO.shoesDescription,
+        shoesUrl = shoesDTO.shoesUrl,
+        category = shoesDTO.category,
+    )
+}
+
 fun ShoesDtoToShoesResponse(shoesDTO: ShoesDTO) = ShoesResponse(
     shoesId = shoesDTO.shoesId,
     shoesName = shoesDTO.shoesName,

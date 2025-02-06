@@ -7,11 +7,10 @@ import org.example.data.model.UserDTO
 val  shoesList = listOf(
     ShoesDTO(
         shoesId = 1,
-        shoesName = "1",
-        shoesDescription = "123",
+        shoesName = "first",
+        shoesDescription = "cool one",
         shoesUrl = "3",
-        category = "123" +
-                ""
+        category = "123"
     )
 )
 

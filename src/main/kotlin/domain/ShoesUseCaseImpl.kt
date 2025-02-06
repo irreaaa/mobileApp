@@ -4,7 +4,7 @@ import org.example.data.ShoesRepository
 import org.example.data.model.ShoesDTO
 import org.example.domain.Request.AddShoesRequest
 import org.example.domain.Request.GetAllFilterShoesRequest
-import org.example.domain.Request.GetShoesById
+import org.example.domain.Request.GetShoesByIdRequest
 import org.example.domain.Request.UpdateShoesRequest
 import org.example.domain.response.ShoesResponse
 
@@ -32,9 +32,8 @@ class ShoesUseCaseImpl(private val shoesRepository: ShoesRepository): ShoesUseCa
             .map { shoes -> shoes.mapToShoesResponse() }
     }
 
-//    override fun getShoesById(getShoesById: GetShoesById): List<ShoesResponse> {
-//        val shoesListById = shoesRepository.findShoesById(getShoesById.shoesId)
-//        return
+//    override fun getShoesById(shoesId: Int): ShoesDTO? {
+//        return shoesRepository.findShoesById(shoesId)
 //    }
 
     override fun updateShoes(updateShoesRequest: UpdateShoesRequest): ShoesResponse {

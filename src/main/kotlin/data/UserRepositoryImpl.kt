@@ -1,5 +1,6 @@
 package org.example.data
 
+import org.example.data.model.FavouriteDTO
 import org.example.data.model.UserDTO
 import org.example.domain.Request.RegistrationRequest
 

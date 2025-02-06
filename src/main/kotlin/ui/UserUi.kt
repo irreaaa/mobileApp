@@ -28,6 +28,7 @@ class UserUi(private val userUseCase: UserUseCase) {
             password = password, )
         val user = userUseCase.authorize(authorizeRequest)
         userAuthorizer = user
+
         println(UserResponseToString(user))
     }
 
@@ -135,6 +136,14 @@ class UserUi(private val userUseCase: UserUseCase) {
         if (!userResponse.address.isNullOrBlank()){
             printOutput.append("Ваш адрес: ${userResponse.address}")
             printOutput.appendLine()
+        }
+        if(!userResponse.favouriteList.isEmpty()){
+            printOutput.appendLine()
+            printOutput.append(
+                userResponse.favouriteList
+                    .map { it.toString() }
+                    .joinToString ("\n" )
+            )
         }
         return printOutput.toString()
     }
